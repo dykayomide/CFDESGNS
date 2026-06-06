@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Flyers — CFDESGNS</title>
+  <meta name="description" content="Browse CFDESGNS' animated video flyers — 1080×1920 motion visuals for nightlife, DJs, and entertainment brands built for Instagram Stories and Reels." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <style>
+    /* ── VIDEO PLAYER OVERLAY ── */
+    .video-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--light);
+      border: 1px solid rgba(73,14,14,0.08);
+      cursor: pointer;
+      aspect-ratio: 1080 / 1920;
+    }
+    .video-item img,
+    .video-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .video-item:hover img { transform: scale(1.05); }
+    .video-item .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: rgba(73,14,14,0.65);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .video-item:hover .play-btn { opacity: 1; }
+    .play-circle {
+      width: 56px; height: 56px;
+      border: 2px solid white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .play-btn span {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: white;
+      text-transform: uppercase;
+    }
+    .video-item.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: none;
+  position: relative;
+}
+.video-item.placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, #490E0E, #8a1c1c, #c0392b, #490E0E);
+  background-size: 300% 300%;
+  animation: gradientStroke 4s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+/* gradientStroke keyframes already defined in style.css — skip if you put this in the <style> tag */
+.video-item.placeholder .ph-icon {
+  font-size: 2.5rem; opacity: 0.25;
+}
+.video-item.placeholder span {
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--red); opacity: 0.45;
+}
+
+    /* ── VIDEO MODAL ── */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .video-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .video-modal-inner {
+      position: relative;
+      max-height: 90vh;
+      aspect-ratio: 1080/1920;
+      width: auto;
+    }
+    .video-modal-inner video,
+    .video-modal-inner img {
+      max-height: 90vh;
+      width: auto;
+      display: block;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -2.5rem; right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-text">CFDESGNS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flyers.html">Flyers</a></li>
+      <li><a href="video-flyers.html">Video Flyers</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#" data-quote class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="flyers.html">Flyers</a>
+    <a href="video-flyers.html">Video Flyers</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="#" data-quote>Get a Quote</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="section-label">Portfolio</span>
+    <h1>Video<br><span style="color: var(--red);">Flyers</span></h1>
+    <p>Animated motion flyers built for Instagram Stories, Reels, and TikTok.</p>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section class="portfolio-preview" style="padding-top:3rem;">
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="nightlife">Nightlife</button>
+      <button class="filter-tab" data-filter="dj">DJ / Artist</button>
+      <button class="filter-tab" data-filter="event">Events</button>
+    </div>
+
+    <!--
+      ════════════════════════════════════════════════════
+      HOW TO ADD YOUR VIDEO FLYERS:
+
+      OPTION A — Use a thumbnail image (recommended for fast loading):
+        Place a jpg thumbnail in images/video-flyers/
+        Place the actual video in images/video-flyers/
+        Update the src on both <img> and <video> tags
+
+      OPTION B — Image only (no video):
+        Remove the <video> tag and update the <img> src
+
+      data-video="images/video-flyers/video-1.mp4"  ← actual video file path
+      data-thumb="images/video-flyers/video-1.jpg"  ← thumbnail image path
+      data-category="nightlife|dj|event"
+      ════════════════════════════════════════════════════
+    -->
+
+    <div class="portfolio-grid video-grid" id="videoGrid">
+
+      <div class="video-item reveal" data-category="nightlife"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238325/video-1_wotg2b.mp4"
+           data-thumb="images/video-flyers/video-1.jpg">
+        <img src="images/video-flyers/video-1.jpg" alt="Video Flyer 1" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 01</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238207/video-2_p9z27j.mp4"
+           data-thumb="images/video-flyers/video-2.jpg">
+        <img src="images/video-flyers/video-2.jpg" alt="Video Flyer 2" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 02</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="event"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238232/video-3_vn9sie.mp4"
+           data-thumb="images/video-flyers/video-3.jpg">
+        <img src="images/video-flyers/video-3.jpg" alt="Video Flyer 3" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 03</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="nightlife"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238353/video-4_f7f2jy.mp4"
+           data-thumb="images/video-flyers/video-4.jpg">
+        <img src="images/video-flyers/video-4.jpg" alt="Video Flyer 4" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 04</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238377/video-5_rbqmz3.mp4"
+           data-thumb="images/video-flyers/video-5.jpg">
+        <img src="images/video-flyers/video-5.jpg" alt="Video Flyer 5" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 05</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="event"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238310/video-6_hs2ans.mp4"
+           data-thumb="images/video-flyers/video-6.jpg">
+        <img src="images/video-flyers/video-6.jpg" alt="Video Flyer 6" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 06</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="nightlife"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238346/video-7_y4y3os.mp4"
+           data-thumb="images/video-flyers/video-7.jpg">
+        <img src="images/video-flyers/video-7.jpg" alt="Video Flyer 7" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 07</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238319/video-8_guqfqb.mp4"
+           data-thumb="images/video-flyers/video-8.jpg">
+        <img src="images/video-flyers/video-8.jpg" alt="Video Flyer 8" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 08</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238355/video-9_un2223.mp4"
+           data-thumb="images/video-flyers/video-9.jpg">
+        <img src="images/video-flyers/video-9.jpg" alt="Video Flyer 9" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 09</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238333/video-10_ndb1ya.mp4"
+           data-thumb="images/video-flyers/video-10.jpg">
+        <img src="images/video-flyers/video-10.jpg" alt="Video Flyer 10" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 10</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238362/video-11_k2n2r5.mp4"
+           data-thumb="images/video-flyers/video-11.jpg">
+        <img src="images/video-flyers/video-11.jpg" alt="Video Flyer 11" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 11</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <div class="video-item reveal" data-category="dj"
+           data-video="https://res.cloudinary.com/dxbykeouk/video/upload/v1780238242/video-12_bvngw9.mp4"           data-thumb="images/video-flyers/video-12.jpg">
+        <img src="images/video-flyers/video-12.jpg" alt="Video Flyer 12" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎬</span><span>Video 12</span>'">
+        <div class="play-btn"><div class="play-circle">▶</div><span>Play</span></div>
+      </div>
+
+      <!-- ⬆ DUPLICATE ANY BLOCK ABOVE TO ADD MORE VIDEO FLYERS ⬆ -->
+
+    </div>
+  </section>
+
+  <!-- INLINE CTA -->
+  <section style="padding:4rem 5vw; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; border-top: 1px solid rgba(73,14,14,0.1);">
+    <div>
+      <h3 style="font-family:var(--font-display); font-size:2.5rem; color:var(--black);">Need a Motion Flyer?</h3>
+      <p style="font-family:var(--font-serif); color:var(--dark-gray); font-weight:300; margin-top:0.5rem;">Animated stories that drive real ticket sales.</p>
+    </div>
+    <a href="#" data-quote class="btn btn-primary">Get a Quote</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo-text">CFDESGNS</span>
+        <p>Cinematic flyer designs, motion visuals, and promotional content for nightlife brands, DJs, events, and entertainment businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="flyers.html">Flyers</a></li>
+          <li><a href="video-flyers.html">Video Flyers</a></li>
+          <li><a href="index.html#services">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <ul>
+          <li><a href="#" data-quote>Request a Quote</a></li>
+          <li><a href="mailto:cf.desgns@gmail.com">cf.desgns@gmail.com</a></li>
+          <li><a href="https://wa.me/08139650078" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 CFDESGNS. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+        <a href="https://wa.me/08139650078" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUOTE MODAL -->
+  <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2 class="modal-title">Get a Quote</h2>
+      <p class="modal-sub">Choose how you'd like to reach us — we respond fast.</p>
+      <div class="quote-options">
+        <a href="https://wa.me/08139650078?text=Hi%20CFDESGNS!%20I%27d%20like%20a%20quote%20for%20a%20video%20flyer." target="_blank" rel="noopener" class="quote-option">
+          <span class="q-icon">💬</span>
+          <div class="q-text">
+            <strong>WhatsApp</strong>
+            <small>Chat with us directly — fastest response</small>
+          </div>
+        </a>
+        <a href="mailto:cf.desgns@gmail.com?subject=Video%20Flyer%20Quote&body=Hi%20CFDESGNS,%0A%0AProject%20type%3A%20Video%20Flyer%0AEvent%20name%2FBrand%3A%0ADeadline%3A%0ADetails%3A" class="quote-option">
+          <span class="q-icon">✉️</span>
+          <div class="q-text">
+            <strong>Email Us</strong>
+            <small>Send your brief in detail</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" aria-label="Close video">×</button>
+      <video id="modalVideo" controls playsinline>
+        Your browser does not support video.
+      </video>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX (for thumbnail fallback) -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous">‹</button>
+    <img class="lightbox-img" src="" alt="Video flyer thumbnail">
+    <button class="lightbox-next" aria-label="Next">›</button>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ── VIDEO MODAL LOGIC ──
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const vmClose    = videoModal.querySelector('.video-modal-close');
+
+    document.querySelectorAll('.video-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const videoSrc = item.dataset.video;
+        if (videoSrc) {
+          modalVideo.src = videoSrc;
+          videoModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          modalVideo.play().catch(() => {});
+        }
+      });
+    });
+
+    function closeVideoModal() {
+      videoModal.classList.remove('open');
+      modalVideo.pause();
+      modalVideo.src = '';
+      document.body.style.overflow = '';
+    }
+
+    vmClose.addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', e => { if (e.target === videoModal) closeVideoModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideoModal(); });
+  </script>
+</body>
+</html>
