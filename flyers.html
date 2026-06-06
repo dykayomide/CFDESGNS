@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flyer Designs — CFDESGNS</title>
+  <meta name="description" content="Browse CFDESGNS' full portfolio of nightlife and event flyer designs. 1080×1350 cinematic flyers for clubs, DJs, and entertainment brands." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-text">CFDESGNS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flyers.html">Flyers</a></li>
+      <li><a href="video-flyers.html">Video Flyers</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#" data-quote class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="flyers.html">Flyers</a>
+    <a href="video-flyers.html">Video Flyers</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="#" data-quote>Get a Quote</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="section-label">Portfolio</span>
+    <h1>Flyer<br><span style="color: var(--red);">Designs</span></h1>
+    <p>Nightlife · Events · Business. Every flyer built to stop the scroll.</p>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section class="portfolio-preview" style="padding-top:3rem;">
+
+    <!-- FILTER TABS -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="nightlife">Nightlife</button>
+      <button class="filter-tab" data-filter="dj">DJ / Artist</button>
+      <button class="filter-tab" data-filter="business">Business</button>
+      <button class="filter-tab" data-filter="event">Events</button>
+    </div>
+
+    <!--
+      ════════════════════════════════════════════════════
+      HOW TO ADD YOUR FLYERS:
+      1. Place your flyer images inside images/flyers/
+         e.g. images/flyers/flyer-01.jpg
+      2. Copy one <div class="portfolio-item ..."> block below
+      3. Update src="images/flyers/YOUR-FILE.jpg"
+      4. Update alt="..." with a description
+      5. Update data-category="nightlife|dj|business|event"
+
+      The correct aspect ratio (1080×1350) is already set.
+      ════════════════════════════════════════════════════
+    -->
+
+    <div class="portfolio-grid flyer-grid" id="flyerGrid">
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-1.jpg" alt="Nightlife Flyer 1" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 01</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-2.jpg" alt="Nightlife Flyer 2" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 02</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="dj">
+        <img src="images/flyers/flyer-3.jpg" alt="DJ Flyer 3" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 03</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="event">
+        <img src="images/flyers/flyer-4.jpg" alt="Event Flyer 4" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 04</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="business">
+        <img src="images/flyers/flyer-5.jpg" alt="Business Flyer 5" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 05</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-6.jpg" alt="Nightlife Flyer 6" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 06</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="dj">
+        <img src="images/flyers/flyer-7.jpg" alt="DJ Flyer 7" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 07</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="event">
+        <img src="images/flyers/flyer-8.jpg" alt="Event Flyer 8" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 08</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-9.jpg" alt="Nightlife Flyer 9" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 09</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="business">
+        <img src="images/flyers/flyer-10.jpg" alt="Business Flyer 10" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 10</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="dj">
+        <img src="images/flyers/flyer-11.jpg" alt="DJ Flyer 11" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 11</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-12.jpg" alt="Nightlife Flyer 12" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 12</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-13.jpg" alt="Nightlife Flyer 13" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 13</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-14.jpg" alt="Nightlife Flyer 14" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 14</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-15.jpg" alt="Nightlife Flyer 15" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 15</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-16.jpg" alt="Nightlife Flyer 16" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 16</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-17.jpg" alt="Nightlife Flyer 17" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 17</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-18.jpg" alt="Nightlife Flyer 18" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 18</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-19.jpg" alt="Nightlife Flyer 19" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 19</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-20.jpg" alt="Nightlife Flyer 20" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 20</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-21.jpg" alt="Nightlife Flyer 21" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 21</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-22.jpg" alt="Nightlife Flyer 22" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 22</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-23.jpg" alt="Nightlife Flyer 23" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 23</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-24.jpg" alt="Nightlife Flyer 24" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 24</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-25.jpg" alt="Nightlife Flyer 25" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 25</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-26.jpg" alt="Nightlife Flyer 26" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 26</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-27.jpg" alt="Nightlife Flyer 27" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 27</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-28.jpg" alt="Nightlife Flyer 28" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 28</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-29.jpg" alt="Nightlife Flyer 29" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 29</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-30.jpg" alt="Nightlife Flyer 30" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 30</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-31.jpg" alt="Nightlife Flyer 31" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 31</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <div class="portfolio-item flyer-ratio reveal" data-category="nightlife">
+        <img src="images/flyers/flyer-32.jpg" alt="Nightlife Flyer 32" loading="lazy"
+             onerror="this.parentElement.classList.add('placeholder');this.remove();this.parentElement.innerHTML='<span class=\'ph-icon\'>🎨</span><span>Flyer 32</span>'">
+        <div class="portfolio-overlay"><span class="view-icon">👁</span><span>View</span></div>
+      </div>
+
+      <!-- ⬆ DUPLICATE ANY BLOCK ABOVE TO ADD MORE FLYERS ⬆ -->
+
+    </div>
+  </section>
+
+  <!-- INLINE CTA -->
+  <section style="padding:4rem 5vw; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; border-top: 1px solid rgba(73,14,14,0.1);">
+    <div>
+      <h3 style="font-family:var(--font-display); font-size:2.5rem; color:var(--black);">Want A Flyer Like This?</h3>
+      <p style="font-family:var(--font-serif); color:var(--dark-gray); font-weight:300; margin-top:0.5rem;">Tell us your event and we'll handle the rest.</p>
+    </div>
+    <a href="#" data-quote class="btn btn-primary">Get a Quote</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo-text">CFDESGNS</span>
+        <p>Cinematic flyer designs, motion visuals, and promotional content for nightlife brands, DJs, events, and entertainment businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="flyers.html">Flyers</a></li>
+          <li><a href="video-flyers.html">Video Flyers</a></li>
+          <li><a href="index.html#services">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <ul>
+          <li><a href="#" data-quote>Request a Quote</a></li>
+          <li><a href="mailto:cf.desgns@gmail.com">cf.desgns@gmail.com</a></li>
+          <li><a href="https://wa.me/08139650078" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 CFDESGNS. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+        <a href="https://wa.me/08139650078" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUOTE MODAL -->
+  <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2 class="modal-title">Get a Quote</h2>
+      <p class="modal-sub">Choose how you'd like to reach us — we respond fast.</p>
+      <div class="quote-options">
+        <a href="https://wa.me/08139650078?text=Hi%20CFDESGNS!%20I%27d%20like%20a%20quote%20for%20a%20flyer%20design." target="_blank" rel="noopener" class="quote-option">
+          <span class="q-icon">💬</span>
+          <div class="q-text">
+            <strong>WhatsApp</strong>
+            <small>Chat with us directly — fastest response</small>
+          </div>
+        </a>
+        <a href="mailto:cf.desgns@gmail.com?subject=Flyer%20Quote%20Request&body=Hi%20CFDESGNS,%0A%0AProject%20type%3A%20Flyer%0AEvent%20name%2FBrand%3A%0ADeadline%3A%0ADetails%3A" class="quote-option">
+          <span class="q-icon">✉️</span>
+          <div class="q-text">
+            <strong>Email Us</strong>
+            <small>Send your brief in detail</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous">‹</button>
+    <img class="lightbox-img" src="" alt="Flyer design">
+    <button class="lightbox-next" aria-label="Next">›</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
