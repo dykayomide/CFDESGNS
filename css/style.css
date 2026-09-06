@@ -208,13 +208,13 @@ nav.scrolled {
   overflow: hidden;
 }
 .btn-primary {
-  background: var(--red);
-  color: var(--white);
+  background: transparent;
+  color: var(--red);
   border-color: var(--red);
 }
 .btn-primary:hover {
-  background: transparent;
-  color: var(--red);
+  background: var(--red);
+  color: var(--white);
 }
 .btn-outline {
   background: transparent;
